@@ -58,7 +58,7 @@ async def beck(event):
     await event.edit(
         f"Hi `{ok.user.first_name}`\nThis is A CompressorBot Which Can Encode Videos.\nReduce Size of Videos With Negligible Quality Change\nU can Generate Samples/screenshots too.",
         buttons=[
-            [Button.inline("HELP", data="ihelp")],
+            [Button.inline("HELP📘", data="ihelp")],
             [
                 Button.url("Support Group💷", url="https://t.me/InFoTel_Group"),
                 Button.url("Dev👩‍💻", url="https://t.me/Physic_hybrid"),
@@ -73,10 +73,10 @@ async def sencc(e):
         "Choose Mode",
         buttons=[
             [
-                Button.inline("Default Compress", data=f"encc{key}"),
-                Button.inline("Custom Compress", data=f"ccom{key}"),
+                Button.inline("Default Compress✂️", data=f"encc{key}"),
+                Button.inline("Custom Compress✏️", data=f"ccom{key}"),
             ],
-            [Button.inline("Back", data=f"back{key}")],
+            [Button.inline("Back🔐", data=f"back{key}")],
         ],
     )
 
@@ -87,10 +87,10 @@ async def back(e):
         "🐠  **What To Do** 🐠",
         buttons=[
             [
-                Button.inline("GENERATE SAMPLE", data=f"gsmpl{key}"),
-                Button.inline("SCREENSHOTS", data=f"sshot{key}"),
+                Button.inline("Generate Sample🎥", data=f"gsmpl{key}"),
+                Button.inline("Screenshots📸", data=f"sshot{key}"),
             ],
-            [Button.inline("COMPRESS", data=f"sencc{key}")],
+            [Button.inline("Compress✂️", data=f"sencc{key}")],
         ],
     )
 
