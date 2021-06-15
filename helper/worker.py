@@ -38,8 +38,8 @@ async def screenshot(e):
             "Check Screenshots Above 😁",
             buttons=[
                 [
-                    Button.inline("GENERATE SAMPLE", data=f"gsmpl{wah}"),
-                    Button.inline("COMPRESS", data=f"sencc{wah}"),
+                    Button.inline("Generate Sample🎥", data=f"gsmpl{wah}"),
+                    Button.inline("Compress✂️", data=f"sencc{wah}"),
                 ],
                 [Button.inline("SKIP", data=f"skip{wah}")],
             ],
@@ -75,8 +75,8 @@ async def encc(e):
         nn = await e.edit(
             "`Compressing..`",
             buttons=[
-                [Button.inline("STATS", data=f"stats{wah}")],
-                [Button.inline("CANCEL PROCESS", data=f"skip{wah}")],
+                [Button.inline("Stats⏳", data=f"stats{wah}")],
+                [Button.inline("Cancel Process🔐", data=f"skip{wah}")],
             ],
         )
         cmd = f'ffmpeg -i "{dl}" -preset ultrafast -c:v libx265 -crf 27 -map 0:v -c:a aac -map 0:a -c:s copy -map 0:s? "{out}" -y'
@@ -87,7 +87,7 @@ async def encc(e):
         er = stderr.decode()
         try:
             if er:
-                await e.edit(str(er) + "\n\n**ERROR** Contact @danish_00")
+                await e.edit(str(er) + "\n\n**ERROR** Contact @physic_hybrid")
                 COUNT.remove(e.chat_id)
                 os.remove(dl)
                 return os.remove(out)
@@ -96,14 +96,14 @@ async def encc(e):
         ees = dt.now()
         ttt = time.time()
         await nn.delete()
-        nnn = await e.client.send_message(e.chat_id, "`Uploading...`")
+        nnn = await e.client.send_message(e.chat_id, "`Uploading...🤒`")
         with open(out, "rb") as f:
             ok = await upload_file(
                      client=e.client,
                      file=f,
                      name=out,
                      progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                         progress(d, t, nnn, ttt, "uploading..")
+                         progress(d, t, nnn, ttt, "uploading..🤒")
                          ),
                      )
         ds = await e.client.send_file(
@@ -145,8 +145,8 @@ async def sample(e):
     xxx = await e.edit(
         "`Generating Sample...🤗`",
         buttons=[
-            [Button.inline("STATS", data=f"stats{wah}")],
-            [Button.inline("CANCEL PROCESS", data=f"skip{wah}")],
+            [Button.inline("Stats⏳", data=f"stats{wah}")],
+            [Button.inline("Cancel Process🔐", data=f"skip{wah}")],
         ],
     )
     ncmd = f'ffmpeg -i "{dl}" -preset ultrafast -ss {ss} -to {dd} -c:v libx265 -crf 27 -map 0:v -c:a aac -map 0:a -c:s copy -map 0:s? "{out}" -y'
@@ -177,8 +177,8 @@ async def sample(e):
             ),
             buttons=[
                 [
-                    Button.inline("SCREENSHOTS", data=f"sshot{wah}"),
-                    Button.inline("COMPRESS", data=f"sencc{wah}"),
+                    Button.inline("Screenshots📸", data=f"sshot{wah}"),
+                    Button.inline("Compress✂️", data=f"sencc{wah}"),
                 ],
                 [Button.inline("SKIP", data=f"skip{wah}")],
             ],
@@ -211,7 +211,7 @@ async def encod(event):
                 return await event.reply("`This Video File is already Compressed 😑😑.`")
         except BaseException:
             pass
-        xxx = await event.reply("`Downloading...`")
+        xxx = await event.reply("`Downloading...🤒`")
         """ For Force Subscribe Channel"""
         # pp = []
         # async for x in event.client.iter_participants("put group username"):
@@ -300,11 +300,11 @@ async def encod(event):
             f"🥳Downloding Completed!!🥳",
             buttons=[
                 [
-                    Button.inline("GENERATE SAMPLE", data=f"gsmpl{key}"),
-                    Button.inline("SCREENSHOTS", data=f"sshot{key}"),
+                    Button.inline("Generate Sample🎥", data=f"gsmpl{key}"),
+                    Button.inline("Screenshots📸", data=f"sshot{key}"),
                 ],
-                [Button.url("MEDIAINFO", url=inf)],
-                [Button.inline("COMPRESS", data=f"sencc{key}")],
+                [Button.url("Mediainfo📝", url=inf)],
+                [Button.inline("Compress✂️", data=f"sencc{key}")],
             ],
         )
     except BaseException as er:
@@ -319,10 +319,10 @@ async def customenc(e, key):
     wh = decode(wah)
     out, dl, thum, dtime = wh.split(";")
     nn = await e.edit(
-        "`Compressing..`",
+        "`Compressing..🤒`",
         buttons=[
-            [Button.inline("STATS", data=f"stats{wah}")],
-            [Button.inline("CANCEL PROCESS", data=f"skip{wah}")],
+            [Button.inline("Stats⏳", data=f"stats{wah}")],
+            [Button.inline("Cancel Process🔐", data=f"skip{wah}")],
         ],
     )
     cmd = f'ffmpeg -i "{dl}" -preset ultrafast -c:v libx265 -crf 27 -map 0:v -c:a aac -map 0:a -c:s copy -map 0:s? "{out}" -y'
